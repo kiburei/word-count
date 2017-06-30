@@ -4,8 +4,8 @@ class String
     count = 0
     sentence = self.split()
     sentence.each() do |word|
-      word = word.gsub(/[!,@,?,",",',',:,;,*,&,^,%,$,#,@]/, "")
-      if word == compare
+      word = word.gsub(/[!,@,?,",",',',:,;,*,&,^,%,$,#,@,]/, "")
+      if word.include? compare
         count += 1
       end
     end
