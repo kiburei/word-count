@@ -8,7 +8,7 @@ require ('sinatra')
   end
 
   post('/word_count') do
-    word = params.fetch('word')
-    @sentence = params.fetch('sentence').word_count(word)
+    word = params.fetch('word').downcase()
+    @sentence = params.fetch('sentence').downcase().word_count(word)
     erb(:result)
   end
