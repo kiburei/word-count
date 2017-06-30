@@ -6,3 +6,9 @@ require ('sinatra')
   get('/') do
     erb(:index)
   end
+
+  post('/word_count') do
+    word = params.fetch('word')
+    @sentence = params.fetch('sentence').word_count(word)
+    erb(:result)
+  end
